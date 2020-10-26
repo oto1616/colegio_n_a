@@ -66,7 +66,7 @@ if (strlen(session_id())<1)
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>SIS</b> S</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>NUEVO</b> AMANECER</span>
+      <span class="logo-lg"><b>SIS</b> SCHOOL</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -76,36 +76,23 @@ if (strlen(session_id())<1)
           </a>
 
       <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="../files/usuarios/<?php echo $_SESSION['imagen']; ?>" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo $_SESSION['nombre']; ?></span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="../files/usuarios/<?php echo $_SESSION['imagen']; ?>" class="img-circle" alt="User Image">
-
-                <p>
-                  <?php echo $_SESSION['nombre'].' '.$_SESSION['cargo']; ?>
-                </p>
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Perfil</a>
+<nav>
+                <div class="nav toggle">
+                    <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                 </div>
-                <div class="pull-right">
-                  <a href="../ajax/usuario.php?op=salir" class="btn btn-default btn-flat">Salir</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-
-        </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <img src="images/profiles/<?php echo $_SESSION['imagen'];?>" alt=""><?php echo $_SESSION['nombre'];?>
+                            <span class=" fa fa-angle-down"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-usermenu pull-right">
+                            <li><a href="dashboard.php"><i class="fa fa-user"></i> Mi cuenta</a></li>
+                            <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
       </div>
     </nav>
   </header>
@@ -178,6 +165,9 @@ if ($_SESSION['grupos']==1) {
           </a>
           <ul class="treeview-menu">
           <li><a href="calificaciones.php?idgrupo=<?php echo $_GET["idgrupo"]; ?>"><i class="fa fa-circle-o"></i> Calificaciones</a></li>
+          </ul>
+          <ul class="treeview-menu">
+          <li><a href="archivos.php"<?php echo $_GET["idgrupo"]; ?>"><i class="fa fa-circle-o"></i> Material de apoyo</a></li>
           </ul>
         </li>
           <li class="treeview">

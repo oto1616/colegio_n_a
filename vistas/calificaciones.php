@@ -40,6 +40,7 @@ if ($_SESSION['grupos']==1) {
 
 
 <div class="panel-body table-responsive" id="listadoregistros">
+    <a style=" font-weight:900;"href="exportar\pdf.php"> VER NOTAS </a>
   <table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover">
     <thead>
       <th>Opciones</th>
